@@ -1,0 +1,75 @@
+.container {
+  perspective: 600px;
+}
+.flipped-container {
+  width: 100%;
+  /* width: 500px; */
+  position: relative;
+  aspect-ratio: 0.47 / 1;
+  /* outline: 1px solid red; */
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: transform 1s;
+}
+
+.front {
+  &.flipped {
+    transform: rotateY(180deg);
+  }
+}
+
+.back {
+  transform: rotateY(180deg);
+  &.flipped {
+    transform: rotateY(0deg);
+  }
+}
+
+.front-core,
+.front-quad,
+.front-chest,
+.front-biceps,
+.front-forearm,
+.front-shoulder,
+.back-triceps,
+.back-calf,
+.back-hamstring,
+.back-glute,
+.back-lowerback,
+.back-upperback,
+.back-shoulder {
+  transition: all 0.5s ease;
+}
+.front-core:hover,
+.front-quad:hover,
+.front-chest:hover,
+.front-biceps:hover,
+.front-forearm:hover,
+.front-shoulder:hover,
+.back-triceps:hover,
+.back-calf:hover,
+.back-hamstring:hover,
+.back-glute:hover,
+.back-lowerback:hover,
+.back-upperback:hover,
+.back-shoulder:hover {
+  fill: rgba(234, 0, 0, 0.5);
+  /* fill: var( --main-red); */
+  cursor: pointer;
+}
+
+.active {
+  fill: #ff0000;
+}
+
+.inactive{
+  fill: var( --deepgrey);
+}

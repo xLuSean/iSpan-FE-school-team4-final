@@ -1,0 +1,74 @@
+CREATE TRIGGER update_quantity_if_duplicate BEFORE
+INSERT
+    ON order_cart FOR EACH ROW BEGIN DECLARE existing_quantity INT;
+
+SELECT
+    quantity INTO existing_quantity
+FROM
+    order_cart
+WHERE
+    products_type_sid = NEW.products_type_sid
+    AND item_sid = NEW.item_sid;
+
+IF existing_quantity IS NOT NULL THEN
+SET
+    NEW.quantity = NEW.quantity + existing_quantity;
+
+END IF;
+
+END;
+
+DELIMITER / / CREATE TRIGGER update_quantity_if_duplicate BEFORE
+INSERT
+    ON order_cart FOR EACH ROW BEGIN DECLARE existing_quantity INT;
+
+SELECT
+    SUM(quantity) INTO existing_quantity
+FROM
+    order_cart
+WHERE
+    products_type_sid = NEW.products_type_sid
+    AND item_sid = NEW.item_sid;
+
+IF existing_quantity IS NOT NULL THEN
+SET
+    NEW.quantity = NEW.quantity + existing_quantity;
+
+END IF;
+
+END;
+
+/ / DELIMITER;
+
+DELIMITER / / CREATE TRIGGER delete_existing_rows BEFORE
+INSERT
+    ON order_cart FOR EACH ROW BEGIN -- Delete existing rows with the same products_type_sid and item_sid
+DELETE FROM
+    order_cart
+WHERE
+    products_type_sid = NEW.products_type_sid
+    AND item_sid = NEW.item_sid;
+
+END;
+
+/ / CREATE TRIGGER update_quantity_if_duplicate BEFORE
+INSERT
+    ON order_cart FOR EACH ROW BEGIN DECLARE existing_quantity INT;
+
+SELECT
+    SUM(quantity) INTO existing_quantity
+FROM
+    order_cart
+WHERE
+    products_type_sid = NEW.products_type_sid
+    AND item_sid = NEW.item_sid;
+
+IF existing_quantity IS NOT NULL THEN
+SET
+    NEW.quantity = NEW.quantity + existing_quantity;
+
+END IF;
+
+END;
+
+/ / DELIMITER;

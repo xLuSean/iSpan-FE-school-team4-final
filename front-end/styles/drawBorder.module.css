@@ -1,0 +1,131 @@
+.draw-cw::after,
+.draw-cw::before,
+.draw-ccw::after,
+.draw-ccw::before {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.draw-cw::after {
+  top: -3px;
+  left: -3px;
+  animation: draw-top-right var(--animation-duration) linear forwards;
+}
+
+.draw-cw::before {
+  bottom: -3px;
+  right: -3px;
+  animation: draw-bottom-left var(--animation-duration) linear forwards;
+}
+
+.draw-ccw::after {
+  top: -3px;
+  right: -3px;
+  animation: draw-top-left var(--animation-duration) linear forwards;
+}
+
+.draw-ccw::before {
+  bottom: -3px;
+  left: -3px;
+  animation: draw-bottom-right var(--animation-duration) linear forwards;
+}
+
+@keyframes draw-top-right {
+  0% {
+    width: 0;
+    height: 0;
+    border-top: 3px solid white;
+  }
+  25% {
+    width: calc(100% + 6px);
+    height: 0;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+  }
+  50%,
+  75%,
+  100% {
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+  }
+}
+
+@keyframes draw-bottom-left {
+  0%,
+  25%,
+  50% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    border-bottom: 3px solid white;
+  }
+  50.1% {
+    opacity: 1;
+  }
+  75% {
+    width: calc(100% + 6px);
+    height: 0;
+    border-bottom: 3px solid white;
+    border-left: 3px solid white;
+  }
+  100% {
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-bottom: 3px solid white;
+    border-left: 3px solid white;
+  }
+}
+
+@keyframes draw-top-left {
+  0% {
+    width: 0;
+    height: 0;
+    border-top: 3px solid white;
+  }
+  25% {
+    width: calc(100% + 6px);
+    height: 0;
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+  }
+  50%,
+  75%,
+  100% {
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+  }
+}
+
+@keyframes draw-bottom-right {
+  0%,
+  25%,
+  50% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    border-bottom: 3px solid white;
+  }
+  50.1% {
+    opacity: 1;
+  }
+  75% {
+    width: calc(100% + 6px);
+    height: 0;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+  }
+  100% {
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+  }
+}

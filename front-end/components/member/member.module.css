@@ -1,0 +1,74 @@
+/* member general components */
+
+.my-container {
+  padding: 50px 64px;
+}
+.CUIsearch-container [class*='MuiInput-root'] {
+  margin-top: 0px;
+}
+.CUIsearch-container input {
+  text-indent: 20px;
+}
+.pagination-container {
+  margin-top: 20px;
+}
+.pagination-container nav {
+  /* background-color: var(--light-grey);  */
+}
+.pagination-container > nav > ul > li > button {
+  background-color: color-mix(in srgb, var(--light-grey) 20%, transparent);
+}
+.pagination-container > nav > ul li button[class*='selected'] {
+  background-color: var(--main-white) !important;
+}
+.guide-to {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+}
+.guide-to a {
+  text-decoration: underline;
+}
+.empty-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--main-white);
+  height: 50vh;
+  border-radius: 3px;
+}
+/* .empty-data::before {
+  content: '';
+  width: 100%;
+  height: 1rem;
+  background-color: #fff;
+  display: block;
+  top: 0;
+} */
+/* my-products */
+.my-products-section {
+  display: flex;
+  width: 100%;
+  gap: 50px;
+}
+@media screen and (max-width: 1024px) {
+  .my-container {
+    padding: 50px 15px;
+  }
+  .my-products-section {
+    gap: 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .my-container {
+    padding: 25px 15px 15px 15px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .pagination-container {
+    margin-top: 0px;
+  }
+}

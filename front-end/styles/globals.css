@@ -1,0 +1,108 @@
+:root {
+  --nav-height: 60px;
+  --footer-height: 60px;
+  --main-red: #ea0000;
+  --main-black: #0a0a0a;
+  --light-gray: #fafafa;
+  --light-gray2: #f5f5f5;
+  --main-white: #fff;
+  --fortress: #ffdf8e;
+  --deepgrey: #707070;
+
+  --light-grey: #e0e3e7;
+  --steel-light-grey: #b2bac2;
+  --steel-grey: #6f7e8c;
+}
+.custom_map_marker{
+  animation: opacityPulse 2s cubic-bezier(1, 0.14, 1, 1);
+  animation-iteration-count: infinite;
+  opacity: 0.5;
+}
+@keyframes opacityPulse {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* nextjs-portal {
+  display: none;
+} */
+
+::selection {
+  background-color: var(--steel-grey);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--steel-light-grey);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--steel-grey);
+}
+
+html,
+body {
+  max-width: 100vw;
+  min-width: 400px;
+  height: 100vh;
+  scrollbar-gutter: auto;
+}
+
+main {
+  overflow: auto;
+  height: calc(100vh - var(--nav-height));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.brick-wallpaper {
+  position: relative;
+}
+
+.brick-wallpaper:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='30' height='30' patternTransform='scale(1.5) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='transparent'/><path d='M0 22.5h30v15H0zm15-15h30v15H15m-30-15h30v15h-30zm15-15h30v15H0z'  stroke-width='1' stroke='hsl(0, 0%, 0%)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,-14)' fill='url(%23a)'/></svg>");
+}

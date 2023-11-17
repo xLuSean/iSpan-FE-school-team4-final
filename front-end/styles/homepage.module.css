@@ -1,0 +1,199 @@
+.main-box {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  background-color: #222;
+  --title-size: 3rem;
+  --subtitle-size: 2rem;
+  --animation-duration: 2s;
+}
+
+.main-box img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.len {
+  background-color: aliceblue;
+  position: fixed;
+  mix-blend-mode: difference;
+  border-radius: 50%;
+  --s: 1;
+  width: calc(100px * var(--s));
+  height: calc(100px * var(--s));
+  transition: all 1s ease, transform 0s;
+  transform: perspective(500px) translate3d(var(--x), var(--y), 1.25rem);
+  z-index: 99;
+  pointer-events: none;
+}
+
+.main-box h1 {
+  font-size: var(--title-size);
+}
+
+.main-box h2 {
+  font-size: var(--subtitle-size);
+}
+
+.section-one,
+.section-two,
+.section-three,
+.section-four,
+.section-five,
+.section-six,
+.section-empty {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.section-empty {
+  height: 128vh;
+}
+
+.section-one-map {
+  margin-top: 15vh;
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  right: 50vw;
+}
+
+.section-five {
+  padding-top: 1.77vh;
+}
+
+.section-one {
+  width: 600vw;
+}
+
+.section-one {
+  height: 105vh;
+}
+
+.logoBox {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.section-two h1 {
+  position: absolute;
+  right: 8rem;
+}
+
+.section-one h1 {
+  position: absolute;
+  top: 50%;
+  left: 60vw;
+}
+
+.section-two h1 {
+  top: 40%;
+}
+
+.section-two {
+  height: 150vh;
+}
+
+.section-three {
+  display: flex;
+  justify-content: space-around;
+}
+
+.section-three h2 {
+  position: absolute;
+  width: 100%;
+  top: -4rem;
+  right: var(--r);
+  left: var(--l);
+}
+
+.section-three .block {
+  position: relative;
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  height: 60vh;
+  width: 22vw;
+}
+
+.section-three .img-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  aspect-ratio: 1;
+  width: 75%;
+  height: 75%;
+  overflow: hidden;
+}
+
+.shop-style h2 {
+  margin-top: 15vh;
+  margin-left: 5rem;
+}
+
+.shop-style .card-box {
+  width: 125vw;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+
+.card-box .img-box {
+  position: relative;
+  flex-grow: 1;
+  aspect-ratio: 1;
+  background-color: #777d;
+  border-radius: 50%;
+}
+
+.card-box .img-box:nth-child(odd) {
+  top: 15vh;
+}
+
+.card-box .img-box img {
+  object-fit: contain;
+}
+
+.section-four {
+  composes: shop-style;
+  left: 4vw;
+}
+
+.section-shop {
+  composes: shop-style;
+  position: absolute;
+  height: 100vh;
+  width: 240.875vw;
+  right: 0;
+}
+
+.section-one-map h2,
+.section-five h2 {
+  text-align: center;
+  margin-bottom: -2rem;
+}
+
+.logo-box {
+  position: fixed;
+  top: calc(50vh - 80px);
+  left: calc(50vw - 240px);
+  pointer-events: none;
+}
+
+.go-transform {
+  --s: 1;
+  --x: 0;
+  --y: 0;
+  --z: 0;
+
+  transform: perspective(500px) scale(var(--s)) translate3d(var(--x), var(--y), var(--z));
+}
+
+.fade-in {
+  --o: 1;
+  opacity: var(--o);
+}
